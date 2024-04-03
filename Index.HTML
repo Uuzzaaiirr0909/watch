@@ -48,40 +48,6 @@ button {
         <button id="resetBtn" onclick="reset">Reset</button>
       </div>
     </div>
-    <script>
-      let seconds=0;
-      let minutes=0;
-      let hours=0;
-      let display=document.getElementById("time");
-      function stopwatch(){
-        seconds++
-        if(seconds>=60){
-          seconds=0;
-          minutes++;
-        }
-        if(minutes>=60){
-          hours++;
-          minutes=0;
-        }
-        display.textContent=pad(hours)+":"+minutes+":"+seconds;
-      }
-      function startwatch(){
-        timer=setInterval(stopwatch,1000);
-      }
-      function pad(number){
-        return(number<10)?'0'+number:number;
-      }
-      function stop(){
-        clearInterval(timer);
-      }
-      function reset(){
-        clearInterval(timer);
-        hours=0;
-        seconds=0;
-        minutes=0;
-        display.textContent=pad(hours)+":"+minutes+":"+seconds;
-      }
-    </script>
 </body>
 </html>
 
